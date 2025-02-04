@@ -23,17 +23,3 @@ test('TC2: Verify if it is possible to remove a product from the cart.', async (
    await checkAmountOfItemsOnMiniCartIcon(productPage, 0);
    await checkAmountOfItemsInMiniCart(productPage, 0);
 });
-
-
-
-
-
-
-
-
-
-
-
-// [data-testid="mini-cart-list"] strong.ProductMiniature-module-productName-JRifI
-   // [data-testid="cartRemoveButton"]
-   // [data-testid="compactBundleName"]
