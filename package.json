@@ -1,14 +1,21 @@
 {
   "name": "pw_ploomshop",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "pretest": "tsc --noEmit && eslint src",
+    "test": "playwright test"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@eslint/js": "^9.20.0",
     "@playwright/test": "^1.50.0",
-    "@types/node": "^22.10.10"
+    "@types/eslint__js": "^8.42.3",
+    "@types/node": "^22.10.10",
+    "eslint": "^9.20.0",
+    "typescript": "^5.7.3",
+    "typescript-eslint": "^8.23.0"
   }
 }

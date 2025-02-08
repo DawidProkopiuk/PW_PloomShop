@@ -41,7 +41,7 @@ async function checkItemInMiniCart(page: BasePage, itemName: string, errorMessag
 
 export async function validateLinks(page: Page, links: string[]) {
    const uniqueLinks: Set<string> = new Set(links);
-   const baseUrl = await page.url();
+   const baseUrl = page.url();
 
    for (const link of uniqueLinks) {
       try {
@@ -54,8 +54,7 @@ export async function validateLinks(page: Page, links: string[]) {
 
          console.log(`Checking link: ${absoluteUrl}`);
          const response: APIResponse = await page.request.get(absoluteUrl);
-
-         expect.soft(response, `Broken link detected: ${absoluteUrl}`).toBeOK();
+         await expect.soft(response, `Broken link detected: ${absoluteUrl}`).toBeOK();
       } catch (error) {
          console.error(`Error encountered during links validation: '${error}'`);
       }
@@ -64,7 +63,7 @@ export async function validateLinks(page: Page, links: string[]) {
 
 export async function validateImages(page: Page, images: string[]) {
    const uniqueImages: Set<string> = new Set(images);
-   const baseUrl = await page.url();
+   const baseUrl = page.url();
  
    for (const src of uniqueImages) {
       try {

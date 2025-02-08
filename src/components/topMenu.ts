@@ -52,7 +52,7 @@ export class TopMenu {
    async removeItemFromMiniCart(itemName: string) {
       const cartItems = await this.page.locator('[data-testid="mini-cart-list"] > div').all();
 
-      for await (const item of cartItems) {
+      for (const item of cartItems) {
          const nameElement = item.locator('strong.ProductMiniature-module-productName-JRifI');
 
          const text = await nameElement.innerText();

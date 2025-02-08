@@ -1,8 +1,8 @@
 import { test as baseTest } from '@playwright/test';
-import { HomePage } from '../../pages/home.page.ts';
-import { ShopPage } from '../../pages/shop.page.ts';
-import { ProductPage } from '../../pages/product.page.ts';
-import { MarketName, markets } from '../../config/markets.ts';
+import { HomePage } from '../../pages/home.page';
+import { ShopPage } from '../../pages/shop.page';
+import { ProductPage } from '../../pages/product.page';
+import { MarketName, markets } from '../../config/markets';
 
 export type Fixtures = {
    homePage: HomePage;
