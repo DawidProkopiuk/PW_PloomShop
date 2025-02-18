@@ -12,10 +12,10 @@ export class TopMenu {
    constructor(page: Page, shopSelector: string) {
       this.page = page;
       this.shopLocator = page.locator(shopSelector);
-      this.miniCartIconLocator = page.locator('[data-testid="cartIcon"]');
-      this.miniCartIconCounter = page.locator('.mini-cart__icon-label');
-      this.miniCartCounter = page.locator('.mini-cart__header-count');
-      this.productNamesInCart = page.locator('[data-testid="mini-cart-list"] strong.ProductMiniature-module-productName-JRifI');
+      this.miniCartIconLocator = page.getByTestId('cartIcon');
+      this.miniCartIconCounter = page.locator('[class*="CartMiniContentContainer-module-iconLabel"]');
+      this.miniCartCounter = page.locator('[class*="CartMiniHeader-module-count"]');
+      this.productNamesInCart = page.getByTestId('mini-cart-list').locator('strong.ProductMiniature-module-productName-JRifI');
    }
 
    async openShop() {

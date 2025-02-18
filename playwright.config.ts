@@ -8,7 +8,7 @@ export default defineConfig<Fixtures>({
   retries: process.env.CI ? 2 : 0,
   workers: 2,
   reporter: 'html',
-  timeout: 90 * 1000,
+  timeout: 60 * 1000,
   use: {
     trace: 'retain-on-failure',
     headless: false,

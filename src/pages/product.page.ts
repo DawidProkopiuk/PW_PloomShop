@@ -8,7 +8,7 @@ export class ProductPage extends BasePage {
    constructor(page: Page, marketData: MarketData) {
       super(page, marketData);
 
-      this.addToCartButton = page.locator('[data-testid="pdpAddToProduct"]');
+      this.addToCartButton = page.getByTestId('pdpAddToProduct');
    }
 
    async addProductToCart() {

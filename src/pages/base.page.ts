@@ -57,6 +57,12 @@ export class BasePage {
       await this.topMenu.hoverOverMiniCartIcon();
    }
 
+   async waitForScriptLoad(scriptName: string): Promise<void> {
+      await this.page.waitForResponse(response =>
+         response.url().includes(scriptName)
+      );
+   }
+
    async getAllLinksFromPage(): Promise<string[]> {
       const hrefs = await this.getAttributesFromElements("a", "href");
       return hrefs.filter((href): href is string => href !== null && href !== undefined);

@@ -28,11 +28,11 @@ export const markets: Record<MarketName, MarketData> = {
       baseURL: 'https://www.ploom.pl/pl',
       locators: {
          shopSelector: '[data-testid="headerItem-1"]',
-         defaultProductSelector: '[data-sku="16199177"]'
+         defaultProductSelector: '[data-sku="15108712"]'
       },
       siteContent: {
          homePageTitle: 'Nowość na rynku! Podgrzewacz tytoniu Ploom',
-         defaultProductName: 'Ploom X Advanced Rose Shimmer'
+         defaultProductName: 'Ploom X Advanced srebrny'
       }
    }
 };

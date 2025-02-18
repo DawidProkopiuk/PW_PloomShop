@@ -1,11 +1,6 @@
 import { test, expect } from '../fixtures/fixtures';
 import { MarketName, markets } from '../../config/markets';
 import { getDefaultProductSelector, getDefaultProductName } from '../../utils/helpers';
-import {
-   checkAmountOfItemsOnMiniCartIcon,
-   checkAmountOfItemsInMiniCart
-} from '../../utils/validators';
-
 
 test('TC1: Verify if it is possible to add a product to the cart.', async ({ homePage, shopPage, productPage, marketName }) => {
    const getExpectedTitle = (marketName: MarketName): string => {
@@ -24,7 +19,8 @@ test('TC1: Verify if it is possible to add a product to the cart.', async ({ hom
    await shopPage.openProductPage(getDefaultProductSelector(marketName));
 
    await productPage.addProductToCart();
-   await checkAmountOfItemsOnMiniCartIcon(productPage, 1);
-   await checkAmountOfItemsInMiniCart(productPage, 1);
+   expect(await productPage.getAmountOfItemsOnMiniCartIcon()).toBe(1);
+   expect(await productPage.getAmountOfItemsInMiniCart()).toBe(1);
+
    expect(await productPage.isItemInMiniCart(getDefaultProductName(marketName))).toBe(true);
 });

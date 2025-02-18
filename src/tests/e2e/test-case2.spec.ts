@@ -1,8 +1,6 @@
-import { test } from '../fixtures/fixtures';
+import { test, expect } from '../fixtures/fixtures';
 import { getDefaultProductSelector, getDefaultProductName } from '../../utils/helpers';
 import {
-   checkAmountOfItemsOnMiniCartIcon,
-   checkAmountOfItemsInMiniCart,
    checkIfItemIsAbsentFromMiniCart
 } from '../../utils/validators';
 
@@ -20,6 +18,6 @@ test.beforeEach('Setup: A product is already in the cart.', async ({ homePage, s
 test('TC2: Verify if it is possible to remove a product from the cart.', async ({ productPage, marketName }) => {
    await productPage.removeItemFromMiniCart(getDefaultProductName(marketName));
    await checkIfItemIsAbsentFromMiniCart(productPage, getDefaultProductName(marketName));
-   await checkAmountOfItemsOnMiniCartIcon(productPage, 0);
-   await checkAmountOfItemsInMiniCart(productPage, 0);
+   expect(await productPage.getAmountOfItemsOnMiniCartIcon()).toBe(0);
+   expect(await productPage.getAmountOfItemsInMiniCart()).toBe(0);
 });

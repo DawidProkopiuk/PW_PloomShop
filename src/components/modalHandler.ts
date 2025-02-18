@@ -6,7 +6,7 @@ export class ModalHandler {
 
    constructor(page: Page) {
       this.cookieConsentButton = page.locator('#onetrust-accept-btn-handler');
-      this.ageConfirmationButton = page.locator('.ageconfirmation__confirmBtn [data-testid="customButton"]');
+      this.ageConfirmationButton = page.locator('.ageconfirmation__confirmBtn').getByTestId('customButton');
    }
 
    async acceptCookies() {

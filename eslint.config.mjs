@@ -7,18 +7,16 @@ export default tseslint.config(
    eslint.configs.recommended,
    ...tseslint.configs.recommended,
    {
-     // define TS project config to enable "linting with type information"
-     languageOptions: {
-       parserOptions: {
-         // reuse the existing `tsconfig.json`
+      languageOptions: {
+         parserOptions: {
          project: true,
          tsconfigRootDir: ".",
-       },
-     },
-     // enable linting rules beneficial for Playwright projects
-     rules: {
-       "@typescript-eslint/no-floating-promises": "error",
-       "@typescript-eslint/await-thenable": "error",
-     },
+         },
+      },
+      // enable linting rules beneficial for Playwright projects
+      rules: {
+         "@typescript-eslint/no-floating-promises": "error",
+         "@typescript-eslint/await-thenable": "error",
+      },
    }
- );
+);

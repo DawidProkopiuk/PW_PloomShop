@@ -22,11 +22,15 @@ TypeScript
 
 npm install
 
-npx playwright install
-
 ## Running Tests
 
 npx playwright test
+
+## Customization & Scalability
+
+To add a new market, update markets.ts with the relevant data.
+
+Modify playwright.config.ts to include additional markets or browser environments.
 
 ## Test Cases
 
@@ -73,3 +77,7 @@ Open the product page using SKU (ploom-x-advanced).
 Validate all links are not broken.
 
 Verify all images load correctly.
+
+## Additional Notes
+
+Test Case 3 may occasionally fail due to actual broken links or images on the website, an issue that has occurred at least once before.
